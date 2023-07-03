@@ -1,4 +1,4 @@
-//Insert Element in BST 
+//Insert Element in BST  in
 
 class Solution {
     public TreeNode insertIntoBST(TreeNode root, int val) {
