@@ -1,0 +1,24 @@
+///Reverse a Linked List in groups of given size
+
+class Solution
+{
+    public static Node reverse(Node node, int k)
+    {
+       Node cur=node;
+       Node pre=null;
+       Node next=null;
+       int count=0;
+       while(cur!=null&&count<k){
+           next=cur.next;
+           cur.next=pre;
+           pre=cur;
+           cur=next;
+           count++;
+       }
+       if(next!=null){
+           node.next=reverse(next,k);
+       }
+    
+    return pre;
+    }
+}
