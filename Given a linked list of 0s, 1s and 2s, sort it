@@ -1,0 +1,24 @@
+//Given a linked list of 0s, 1s and 2s, sort it
+
+class Solution
+{
+    //Function to sort a linked list of 0s, 1s and 2s.
+    static Node segregate(Node head)
+    {
+        ArrayList<Integer> list= new ArrayList<>();
+        Node temp=head;
+        while(temp!=null){
+            list.add(temp.data);
+            temp=temp.next;
+        }
+        Collections.sort(list);
+        Node newNode=new Node(0);
+       temp=newNode;
+        for(int i=0;i<list.size();i++){
+            temp.next=new Node(list.get(i));
+            temp=temp.next;
+            
+        }
+        return newNode.next;
+    }
+}
