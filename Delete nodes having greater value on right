@@ -1,0 +1,29 @@
+///Delete nodes having greater value on right
+
+
+Given a singly linked list, remove all the nodes in the list which have any node on their right whose value is greater. (Not just immidiate Right , but entire List on the Right)
+
+
+
+class Solution
+{
+    Node compute(Node head)
+    {  
+        if(head.next==null){
+            return head;
+        }
+         Node temp=head;
+        while(temp.next!=null&&temp!=null) {
+            if(temp.data<temp.next.data){
+                temp.data=temp.next.data;
+                temp.next=temp.next.next;
+                temp=head;
+            }
+            else{
+                temp=temp.next;
+            }
+             
+         }
+        return head;
+    }
+}
